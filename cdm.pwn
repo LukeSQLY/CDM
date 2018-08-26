@@ -1,5 +1,5 @@
 /*
-					Creative • DM 
+					Creative â€¢ DM 
 		Skrypt wykonany przez LukeSQLY oraz serinho.
 		Ostatnia data kompilacji: 22.01.2018
 		
@@ -103,11 +103,11 @@ public OnGameModeInit()
     SendRconCommand("stream_distance "#STREAM_DISTANCE_S);
     //Ustawienia rozgrywki:
     AllowInteriorWeapons(1); //bron w intkach
-    DisableInteriorEnterExits(); //wy31czenie wejoa do intków z GTA
+    DisableInteriorEnterExits(); //wy31czenie wejoa do intkÃ³w z GTA
     EnableStuntBonusForAll(0); //brak hajsu za stunty
-    ShowNameTags(1); //Pokazywanie nicków graczy
+    ShowNameTags(1); //Pokazywanie nickÃ³w graczy
     UsePlayerPedAnims(); //animki CJ - Trzymanie broni w obu dloniach, obecnie OFF
-    //SetNameTagDrawDistance(20.0); //Wyowietlanie nicków od 20 metrów
+    //SetNameTagDrawDistance(20.0); //Wyowietlanie nickÃ³w od 20 metrÃ³w
     print("|| WYKONANO: OnGameModeInit || ");
     printf(DNAZWA" "DWERSJA" compiled on "DKOMPILACJA);
     WasteDeAMXersTime();
@@ -156,30 +156,30 @@ public OnPlayerConnect(playerid)
     }
     if(GetPlayerAdminLevel(playerid) > 1)
     {
-        SendClientMessage(playerid, COLOR_CIEMBLUE, "» Zalogowa³eœ siê jako Administrator, sprawdŸ dostepne komendy! (/acmd)");
-        format(string, sizeof(string), "Administrator %s [%d] zalogowa³ siê na serwer!", pName(playerid), playerid);
-        GameTextForPlayer(playerid, "~w~Zalogowa³es sie jako ~r~Administrator~w~, Witaj!", 8000, 4);
+        SendClientMessage(playerid, COLOR_CIEMBLUE, "Â» ZalogowaÂ³eÅ“ siÃª jako Administrator, sprawdÅ¸ dostepne komendy! (/acmd)");
+        format(string, sizeof(string), "Administrator %s [%d] zalogowaÅ‚eÅ› siÃª na serwer!", pName(playerid), playerid);
+        GameTextForPlayer(playerid, "~w~ZalogowaÂ³es sie jako ~r~Administrator~w~, Witaj!", 8000, 4);
         AdminWarning(COLOR_YELLOW, string, 1);
         return 1;
     }
     else if(pInfo[playerid][ModLevel] > 1)
     {
-        SendClientMessage(playerid, COLOR_CIEMBLUE, "» Zalogowa³eœ siê jako Moderator, sprawdŸ dostêpne komendy! (/acmd)");
-        format(string, sizeof(string), "Moderator %s [%d] zalogowa³ siê na serwer!", pName(playerid), playerid);
+        SendClientMessage(playerid, COLOR_CIEMBLUE, "Â» ZalogowaÂ³eÅ“ siÃª jako Moderator, sprawdÅ¸ dostÃªpne komendy! (/acmd)");
+        format(string, sizeof(string), "Moderator %s [%d] zalogowaÂ³ siÃª na serwer!", pName(playerid), playerid);
         AdminWarning(COLOR_YELLOW, string, 1);
         return 1;
     }
     else if (IsPlayerVip(playerid)) {
         
         SetPlayerColor(playerid, 0xDFB509FF);
-        SendClientMessage(playerid, COLOR_WHITE, "» Jesteœ posiadaczem konta {E9CE16}VIP{FFFFFF} ¯yczymy mi³ej gry :)");
+        SendClientMessage(playerid, COLOR_WHITE, "Â» JesteÅ“ posiadaczem konta {E9CE16}VIP{FFFFFF} Â¯yczymy miÂ³ej gry :)");
         GameTextForPlayer(playerid, "~w~Pakiet ~y~VIP", 8000, 4);
     }
     SetPlayerColor(playerid, COLOR_WHITE);
     SetPlayerScore(playerid, pInfo[playerid][Level]);
     //TogglePlayerSpectating(playerid, 0);
     //SetCameraBehindPlayer(playerid);
-    format(string, sizeof(string), "%s do³¹czy³ na serwer.", pName(playerid));
+    format(string, sizeof(string), "%s doÂ³Â¹czyÂ³ na serwer.", pName(playerid));
     SendClientMessageToAll(COLOR_GREEN, string);
     return 1;
 }
@@ -189,9 +189,9 @@ public OnPlayerDisconnect(playerid, reason)
     GetPlayerName(playerid, playerName, sizeof(playerName));
     switch(reason)
     {
-        case 0: format(string, sizeof(string), "%s opuœci³ serwer (timeout/crash)", playerName);
-        case 1: format(string, sizeof(string), "%s opuœci³ serwer (/q)", playerName);
-        case 2: format(string, sizeof(string), "%s opuœci³ serwer (ban/kick)", playerName);
+        case 0: format(string, sizeof(string), "%s opuÅ“ciÂ³ serwer (timeout/crash)", playerName);
+        case 1: format(string, sizeof(string), "%s opuÅ“ciÂ³ serwer (/q)", playerName);
+        case 2: format(string, sizeof(string), "%s opuÅ“ciÂ³ serwer (ban/kick)", playerName);
     }
     SendClientMessageToAll(COLOR_GRAD2, string);
     printf(string);
@@ -276,7 +276,7 @@ public OnRconCommand(cmd[])
 public OnVehicleRespray(playerid, vehicleid, color1, color2)
 {
     /*new string[48];
-    format(string, sizeof(string), "x * Zap³aci³eœ $200 za naprawê pojazdu! * x");
+    format(string, sizeof(string), "x * ZapÂ³aciÂ³eÅ“ $200 za naprawÃª pojazdu! * x");
     SendClientMessage(playerid, COLOR_LIGHTBLUE, string);*/
     return 1;
 }
@@ -321,7 +321,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
             if(response) {
                 if(strcmp(inputtext, ADMINPASS, false)) {
                     SetPVarInt(playerid, "AdminLogged", 1);
-                    SendClientMessage(playerid, COLOR_LIGHTBLUE, "» Pomyœlnie siê zalogowa³eœ!");
+                    SendClientMessage(playerid, COLOR_LIGHTBLUE, "Â» PomyÅ“lnie siÃª zalogowaÂ³eÅ“!");
                 }
                 if(isnull(inputtext)) return Kick(playerid);
             }
@@ -334,7 +334,7 @@ public OnPlayerClickPlayer(playerid, clickedplayerid, source)
     new string[128];
     if(IsPlayerOnAdminDuty(playerid) || IsPlayerAdmin(playerid))
     {
-        format(string, sizeof(string), "» Sprawdzasz statystyki gracza: %s", pName(clickedplayerid));
+        format(string, sizeof(string), "Â» Sprawdzasz statystyki gracza: %s", pName(clickedplayerid));
         SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
         format(string, sizeof(string), "Name: %s | Level: %d | Kills: %d | Deaths: %d | Warns: %d | VIP: %d | Admin Level: %d | Mod Level: %d", pName(clickedplayerid), pInfo[clickedplayerid][Level], pInfo[clickedplayerid][Kills], pInfo[clickedplayerid][Deaths], pInfo[clickedplayerid][Warns], pInfo[clickedplayerid][Vip], pInfo[clickedplayerid][AdminLevel], pInfo[clickedplayerid][ModLevel]);
         SendClientMessage(playerid, COLOR_WHITE, string);
@@ -343,7 +343,7 @@ public OnPlayerClickPlayer(playerid, clickedplayerid, source)
 }
 public OnPlayerCommandPerformed(playerid, cmdtext[], success)
 { 
-    if(!success) return SendClientMessage(playerid, COLOR_RED, "» B£¥D:{ffffff} Nieznana komenda!");  
+    if(!success) return SendClientMessage(playerid, COLOR_RED, "Â» BÂ£Â¥D:{ffffff} Nieznana komenda!");  
     return 1;
 }
 //==============================================================================================================================================================//
@@ -352,7 +352,7 @@ public OnPlayerCommandPerformed(playerid, cmdtext[], success)
  
 CMD:skin(playerid, temps[])
 {
-    ShowPlayerDialog(playerid, 5, DIALOG_STYLE_INPUT, DNAZWA" » Zmiana skina", "Wpisz ID skina", "Ok", "Zamknij");
+    ShowPlayerDialog(playerid, 5, DIALOG_STYLE_INPUT, DNAZWA" Â» Zmiana skina", "Wpisz ID skina", "Ok", "Zamknij");
     return 1;
 }
 CMD:teleporty(playerid, temps[])
@@ -364,21 +364,21 @@ CMD:teleporty(playerid, temps[])
 CMD:ls(playerid, temps[])
 {
     SetPlayerPos(playerid, 2494.1304,-1674.7213,13.3359);
-    SendClientMessage(playerid, COLOR_LIGHTBLUE, "» Teleportowales sie do Los Santos!");
+    SendClientMessage(playerid, COLOR_LIGHTBLUE, "Â» Teleportowales sie do Los Santos!");
     return 1;
 }
  
 CMD:lv(playerid, temps[])
 {
     SetPlayerPos(playerid, 2146.7803,1000.5715,10.8203);
-    SendClientMessage(playerid, COLOR_LIGHTBLUE, "» Teleportowales sie do Las Venturas!");
+    SendClientMessage(playerid, COLOR_LIGHTBLUE, "Â» Teleportowales sie do Las Venturas!");
     return 1;
 }
  
 CMD:sf(playerid, temps[])
 {
     SetPlayerPos(playerid, 2-1971.6472,258.6663,35.1719);
-    SendClientMessage(playerid, COLOR_LIGHTBLUE, "» Teleportowales sie do San Fierro!");
+    SendClientMessage(playerid, COLOR_LIGHTBLUE, "Â» Teleportowales sie do San Fierro!");
     return 1;
 }
  
@@ -386,14 +386,14 @@ CMD:gmx(playerid, params[])
 {
     if(IsPlayerAdmin(playerid) || IsPlayerSuperAdmin(playerid))
     {
-    SendClientMessage(playerid, COLOR_LIGHTBLUE, "» Restartujesz serwer");
+    SendClientMessage(playerid, COLOR_LIGHTBLUE, "Â» Restartujesz serwer");
     GameModeExit();
     return 1;
     }
     else
     {
-    SendClientMessage(playerid, COLOR_RED, "Zostales wyrzucony z serwera przez Admina" SYSTEM " | ""Powód: Próba restartu serwera [GMX]");
-    printf("%s próbowal zrestarowac serwer przy uzyciu komendy /gmx!", pName(playerid));
+    SendClientMessage(playerid, COLOR_RED, "Zostales wyrzucony z serwera przez Admina" SYSTEM " | ""PowÃ³d: PrÃ³ba restartu serwera [GMX]");
+    printf("%s prÃ³bowal zrestarowac serwer przy uzyciu komendy /gmx!", pName(playerid));
     SetTimerEx("KickEx", 1000 * 1, false, "i", playerid);
     return 1;
     }
@@ -403,16 +403,16 @@ CMD:setvw(playerid, params[])
 {
     new string[128], targetid, val;
     if (IsPlayerOnAdminDuty(playerid)) {
-        if(sscanf(params, "ui", targetid, val)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /setvw [id/nick] [virtualworld]");
+        if(sscanf(params, "ui", targetid, val)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /setvw [id/nick] [virtualworld]");
         SetPlayerVirtualWorld(targetid, val);
-        format(string, sizeof(string), "» Administrator %s zmieni³ twój virtualworld na %i", pName(playerid), val);
+        format(string, sizeof(string), "Â» Administrator %s zmieniÂ³ twÃ³j virtualworld na %i", pName(playerid), val);
         SendClientMessage(targetid, COLOR_LIGHTRED, string);
-        format(string, sizeof(string), "» Zmieni³eœ graczowi %s virtualworld na %i", pName(targetid), val);
+        format(string, sizeof(string), "Â» ZmieniÂ³eÅ“ graczowi %s virtualworld na %i", pName(targetid), val);
         SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
-        format(string, sizeof(string), "ADMINWARNING: Administrator %s zmieni³ virtualworld gracza %s na %i", pName(playerid), pName(targetid), val);
+        format(string, sizeof(string), "ADMINWARNING: Administrator %s zmieniÂ³ virtualworld gracza %s na %i", pName(playerid), pName(targetid), val);
         AdminWarning(COLOR_RED, string, 1);
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby uzyc tej komendy musisz byc na sluzbie administratora!(/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uzyc tej komendy musisz byc na sluzbie administratora!(/duty)");
     return 1;
  
 }
@@ -423,10 +423,10 @@ CMD:setint(playerid, params[])
     {
     new string[128], value = strval(params);
     SetPlayerInterior(playerid, value);
-    format(string, sizeof(string), "»  Zmieniles swój INT! Twoj interior to teraz: %d", value);
+    format(string, sizeof(string), "Â»  Zmieniles swÃ³j INT! Twoj interior to teraz: %d", value);
     SendClientMessage(playerid, -1, string);
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby uzyc tej komendy musisz byc na sluzbie administratora!(/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uzyc tej komendy musisz byc na sluzbie administratora!(/duty)");
     return 1;
 }
  
@@ -436,10 +436,10 @@ CMD:minigun(playerid, params[])
     if (IsPlayerOnAdminDuty(playerid))
     {
         GivePlayerWeapon(playerid, 38 , 900);
-        SendClientMessage(playerid, COLOR_RED, "» Otrzymujesz minigun!");
+        SendClientMessage(playerid, COLOR_RED, "Â» Otrzymujesz minigun!");
         return 1;
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby uzyc tej komendy musisz byc na sluzbie administratora!(/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uzyc tej komendy musisz byc na sluzbie administratora!(/duty)");
     return 1;
  
 }
@@ -449,15 +449,15 @@ CMD:duty(playerid, temps[])
     if(IsPlayerAdmin(playerid) || IsPlayerScriptAdmin(playerid)) {
         if(!IsPlayerOnAdminDuty(playerid)) {
             SetPVarInt(playerid, "AdminDuty", 1);
-            SendClientMessage(playerid, COLOR_GREEN, "» Teraz jestes na sluzbie administratora!");
+            SendClientMessage(playerid, COLOR_GREEN, "Â» Teraz jestes na sluzbie administratora!");
         }
         else {
             SetPVarInt(playerid, "AdminDuty", 0);
-            SendClientMessage(playerid, COLOR_ORANGE, "» Juz nie jestes na sluzbie administratora!");
+            SendClientMessage(playerid, COLOR_ORANGE, "Â» Juz nie jestes na sluzbie administratora!");
         }
         return 1;
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ administratorem!");  
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ administratorem!");  
     return 1;
 }
  
@@ -467,19 +467,19 @@ CMD:setadmin(playerid, params[])
     if (IsPlayerAdmin(playerid) || IsPlayerSuperAdmin(playerid))
     {
         if(IsPlayerConnected(value)) {
-            if (sscanf(params, "ui", recieverid, value)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /setadmin [id/nick] [level]");
+            if (sscanf(params, "ui", recieverid, value)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /setadmin [id/nick] [level]");
             SetPlayerAdminLevel(recieverid, value);
-            format(string, sizeof(string), "»  Nadales graczowi %s (ID:%d) funkcje administratorskie",pName(recieverid), recieverid);
-            format(string2, sizeof(string2), "»  Otrzymales %i poziom administratora od %s", value, pName(playerid));
+            format(string, sizeof(string), "Â»  Nadales graczowi %s (ID:%d) funkcje administratorskie",pName(recieverid), recieverid);
+            format(string2, sizeof(string2), "Â»  Otrzymales %i poziom administratora od %s", value, pName(playerid));
             SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
             SendClientMessage(recieverid, COLOR_LIGHTBLUE, string2);
-            format(string, sizeof(string), "» ADMINWARNING: Administrator %s nada³ %i poziom administratora %s (ID:%d)!", pName(playerid), value, pName(recieverid), recieverid);
+            format(string, sizeof(string), "Â» ADMINWARNING: Administrator %s nadaÂ³ %i poziom administratora %s (ID:%d)!", pName(playerid), value, pName(recieverid), recieverid);
             AdminWarning(COLOR_RED, string, 1);
             return 1;
         }
-        else SendClientMessage(playerid, COLOR_RED, "» Nie ma takiego gracza na serwerze!");
+        else SendClientMessage(playerid, COLOR_RED, "Â» Nie ma takiego gracza na serwerze!");
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Nie jesteœ administratorem RCON lub nie masz wystarczajaco wysokiego poziomu administratora.");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Nie jesteÅ“ administratorem RCON lub nie masz wystarczajaco wysokiego poziomu administratora.");
     return 1;
 }
 CMD:setmod(playerid, params[])
@@ -488,19 +488,19 @@ CMD:setmod(playerid, params[])
     {
         new string[128], string2[128], value = strval(params);
         if(IsPlayerConnected(value)) {
-            if (sscanf(params, "u", value)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /setmod [id/nick]");
+            if (sscanf(params, "u", value)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /setmod [id/nick]");
             SetPlayerModLevel(value, 3);
-            format(string, sizeof(string), "»  Nadales graczowi %s (ID:%d) funkcje moderatora.",pName(value), value);
-            format(string2, sizeof(string2), "»  Otrzymales funkcje moderatora od administratora %s", pName(playerid));
+            format(string, sizeof(string), "Â»  Nadales graczowi %s (ID:%d) funkcje moderatora.",pName(value), value);
+            format(string2, sizeof(string2), "Â»  Otrzymales funkcje moderatora od administratora %s", pName(playerid));
             SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
             SendClientMessage(value, COLOR_LIGHTBLUE, string2);
             format(string, sizeof(string), "Administrator %s nadal funkcje moderacyjne graczowi %s (ID:%d)!", pName(playerid), pName(value), value);
             AdminWarning(COLOR_RED, string, 1);
             return 1;
         }
-        else SendClientMessage(playerid, COLOR_RED, "» Nie ma takiego gracza na serwerze!");
+        else SendClientMessage(playerid, COLOR_RED, "Â» Nie ma takiego gracza na serwerze!");
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Nie jestes Administratorem RCON");    
+    else SendClientMessage(playerid, COLOR_RED, "Â» Nie jestes Administratorem RCON");    
     return 1;
 }
  
@@ -515,7 +515,7 @@ CMD:stats(playerid, temps[])
 CMD:admins(playerid, temps[])
 {
     new string[128];
-    SendClientMessage(playerid, COLOR_WHITE, "Lista administratorów:");
+    SendClientMessage(playerid, COLOR_WHITE, "Lista administratorÃ³w:");
     for(new i = 0; i < MAX_PLAYERS; i++)
     {
         if(IsPlayerConnected(i))
@@ -546,26 +546,26 @@ CMD:warn(playerid, params[])
     {
         if(IsPlayerConnected(warnid))
         {
-            if (sscanf(params, "us[64]", warnid, reason)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /warn [id/nick] [powod]");
+            if (sscanf(params, "us[64]", warnid, reason)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /warn [id/nick] [powod]");
             pInfo[warnid][Warns]++;
-            format(string, sizeof(string), "» Zosta³eœ zwarnowany przez administratora %s. (%d/3) Powod: %s", pName(playerid), pInfo[warnid][Warns], reason);
+            format(string, sizeof(string), "Â» ZostaÂ³eÅ“ zwarnowany przez administratora %s. (%d/3) Powod: %s", pName(playerid), pInfo[warnid][Warns], reason);
             SendClientMessage(warnid, COLOR_TOMATO, string);
-            format(string, sizeof(string), "» Zwarnowa³eœ gracza %s (%d/3) z powodem %s", pName(playerid), pInfo[warnid][Warns], reason);
+            format(string, sizeof(string), "Â» ZwarnowaÂ³eÅ“ gracza %s (%d/3) z powodem %s", pName(playerid), pInfo[warnid][Warns], reason);
             SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
-            format(string, sizeof(string), "ADMINWARNING: Administrator %s zwarnowa³ gracza %s. (%d/3) Powód: %s", pName(playerid), pName(warnid), pInfo[warnid][Warns], reason);
+            format(string, sizeof(string), "ADMINWARNING: Administrator %s zwarnowaÂ³ gracza %s. (%d/3) PowÃ³d: %s", pName(playerid), pName(warnid), pInfo[warnid][Warns], reason);
             AdminWarning(COLOR_RED, string, 1);
             if(pInfo[warnid][Warns] == 3)
             {
                 SetTimerEx("BanTimed", 500, false, "d", warnid);
-                format(string, 200, "Gracz %s zosta³ zbanowany przez administratora: %s | Powód: Przekroczenie limitu warnów (3)", pName(warnid), pName(playerid));
+                format(string, 200, "Gracz %s zostaÂ³ zbanowany przez administratora: %s | PowÃ³d: Przekroczenie limitu warnÃ³w (3)", pName(warnid), pName(playerid));
                 SendClientMessageToAll(COLOR_LIGHTRED, string);
-                printf("BanLog: %s zosta³ zbanowany przez administratora: %s | Powód: Przekroczenie limitu warnów (3)", pName(warnid), pName(playerid));
+                printf("BanLog: %s zostaÂ³ zbanowany przez administratora: %s | PowÃ³d: Przekroczenie limitu warnÃ³w (3)", pName(warnid), pName(playerid));
             }
            
         }
-        else SendClientMessage(playerid, COLOR_RED, "» Nie ma takiego gracza na serwerze!");
+        else SendClientMessage(playerid, COLOR_RED, "Â» Nie ma takiego gracza na serwerze!");
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ na slu¿bie administratora! (/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ na sluÂ¿bie administratora! (/duty)");
     return 1;
 }
  
@@ -576,22 +576,22 @@ CMD:unwarn(playerid, params[])
     {
         if(IsPlayerConnected(warnid))
         {
-                if (sscanf(params, "u", warnid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /unwarn [id/nick]");
+                if (sscanf(params, "u", warnid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /unwarn [id/nick]");
                 if(pInfo[warnid][Warns] > 0)
                 {
                     pInfo[warnid][Warns]--;
-                    format(string, sizeof(string), "» Zosta³eœ unwarnowany przez administratora %s. (%d/3)", pName(playerid), pInfo[warnid][Warns]);
+                    format(string, sizeof(string), "Â» ZostaÂ³eÅ“ unwarnowany przez administratora %s. (%d/3)", pName(playerid), pInfo[warnid][Warns]);
                     SendClientMessage(warnid, COLOR_LIGHTBLUE, string);
-                    format(string, sizeof(string), "» Unwarnowa³eœ gracza %s (%d/3).", pName(playerid), pInfo[warnid][Warns]);
+                    format(string, sizeof(string), "Â» UnwarnowaÂ³eÅ“ gracza %s (%d/3).", pName(playerid), pInfo[warnid][Warns]);
                     SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
-                    format(string, sizeof(string), "» ADMINWARNING: Administrator %s unwarnowa³ gracza %s. (%d/3)", pName(playerid), pName(warnid), pInfo[warnid][Warns]);
+                    format(string, sizeof(string), "Â» ADMINWARNING: Administrator %s unwarnowaÂ³ gracza %s. (%d/3)", pName(playerid), pName(warnid), pInfo[warnid][Warns]);
                     AdminWarning(COLOR_RED, string, 1);
                 }
-                 else SendClientMessage(playerid, COLOR_TOMATO, "» Ten gracz ma ju¿ 0 warnów.");
+                 else SendClientMessage(playerid, COLOR_TOMATO, "Â» Ten gracz ma juÂ¿ 0 warnÃ³w.");
         }
-        else SendClientMessage(playerid, COLOR_RED, "» Nie ma takiego gracza na serwerze!");
+        else SendClientMessage(playerid, COLOR_RED, "Â» Nie ma takiego gracza na serwerze!");
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ na slu¿bie administratora! (/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ na sluÂ¿bie administratora! (/duty)");
     return 1;
 }
  
@@ -602,15 +602,15 @@ CMD:kick(playerid, params[])
     {
         if(IsPlayerConnected(kickid))
         {
-            if (sscanf(params, "us[64]", kickid, reason)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /kick [id/nick] [powod]");
-            format(string, sizeof(string), "Gracz %s zosta³ wyrzucony z serwera przez administratora: %s | Powód: %s", pName(kickid), pName(playerid), reason);
+            if (sscanf(params, "us[64]", kickid, reason)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /kick [id/nick] [powod]");
+            format(string, sizeof(string), "Gracz %s zostaÂ³ wyrzucony z serwera przez administratora: %s | PowÃ³d: %s", pName(kickid), pName(playerid), reason);
             SendClientMessageToAll(COLOR_LIGHTRED, string);
             printf(string);
             SetTimerEx("KickEx", 1000, false, "i", kickid);
         }
-        else SendClientMessage(playerid, COLOR_RED, "» Nie ma takiego gracza na serwerze!");
+        else SendClientMessage(playerid, COLOR_RED, "Â» Nie ma takiego gracza na serwerze!");
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ na slu¿bie administratora! (/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ na sluÂ¿bie administratora! (/duty)");
     return 1;
 }
  
@@ -621,15 +621,15 @@ CMD:ban(playerid, params[])
     {
         if(IsPlayerConnected(bannedid))
         {
-            if (sscanf(params, "us[64]", bannedid, reason)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /ban [id/nick] [powod]");
-            format(string, sizeof(string), "Gracz %s zostal zbanowany przez administratora: %s | Powód: %s", pName(bannedid), pName(playerid), reason);
+            if (sscanf(params, "us[64]", bannedid, reason)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /ban [id/nick] [powod]");
+            format(string, sizeof(string), "Gracz %s zostal zbanowany przez administratora: %s | PowÃ³d: %s", pName(bannedid), pName(playerid), reason);
             SendClientMessageToAll(COLOR_LIGHTRED, string);
             printf(string);
             BanEx(bannedid, reason);
         }
-        else SendClientMessage(playerid, COLOR_RED, "» Nie ma takiego gracza na serwerze!");
+        else SendClientMessage(playerid, COLOR_RED, "Â» Nie ma takiego gracza na serwerze!");
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ na slu¿bie administratora! (/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ na sluÂ¿bie administratora! (/duty)");
     return 1;
 }
  
@@ -637,16 +637,16 @@ CMD:slap(playerid, params[])
 {
     new string[128], targetid, reason[64], Float:posX, Float:posY, Float:posZ;
     if(IsPlayerScriptAdmin(playerid)) {
-        if (sscanf(params, "us[64]", targetid, reason)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /slap [id/nick] [powod]");
-        if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "»  Nie ma takiego gracza!");
+        if (sscanf(params, "us[64]", targetid, reason)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /slap [id/nick] [powod]");
+        if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â»  Nie ma takiego gracza!");
         GetPlayerPos(targetid, Float:posX, Float:posY, Float:posZ);
         SetPlayerPos(targetid, Float:posX, Float:posY, Float:posZ + 5.0);
-        format(string, sizeof(string), "» Dosta³eœ klapsa od administratora %s, powód: %s", pName(playerid), reason);
+        format(string, sizeof(string), "Â» DostaÂ³eÅ“ klapsa od administratora %s, powÃ³d: %s", pName(playerid), reason);
         SendClientMessage(targetid, COLOR_LIGHTRED, string);
-        format(string, sizeof(string), "Administrator %s da³ slapa graczowi %s, powód: %s", pName(playerid), pName(targetid), reason);
+        format(string, sizeof(string), "Administrator %s daÂ³ slapa graczowi %s, powÃ³d: %s", pName(playerid), pName(targetid), reason);
         AdminWarning(COLOR_RED, string, 1);
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ administratorem!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ administratorem!");
     return 1;
 }
  
@@ -654,47 +654,47 @@ CMD:freeze(playerid, params[])
 {
     new string[128], targetid, time;
     if(IsPlayerOnAdminDuty(playerid)) {
-        if (sscanf(params, "ui", targetid, time)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /freeze [id/nick] [czas w sekundach]");
-        if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» Nie ma takiego gracza!");
+        if (sscanf(params, "ui", targetid, time)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /freeze [id/nick] [czas w sekundach]");
+        if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» Nie ma takiego gracza!");
         TogglePlayerControllable(targetid, 0);
         SetTimerEx("UnFreeze", time*1000, false, "i", targetid);
-        format(string, sizeof(string), "Zosta³eœ zamro¿ony na %i sekund!", time);
+        format(string, sizeof(string), "ZostaÂ³eÅ“ zamroÂ¿ony na %i sekund!", time);
         GameTextForPlayer(targetid, string, time*1000, 4);
-        format(string, sizeof(string), "» Zosta³eœ zamro¿ony przez administratora %s na czas %i sekund.", pName(playerid), time);
+        format(string, sizeof(string), "Â» ZostaÂ³eÅ“ zamroÂ¿ony przez administratora %s na czas %i sekund.", pName(playerid), time);
         SendClientMessage(targetid, COLOR_LIGHTRED, string);
-        format(string, sizeof(string), "Administrator %s zamrozi³ gracza %s na czas %i sekund.", pName(playerid), pName(targetid), time);
+        format(string, sizeof(string), "Administrator %s zamroziÂ³ gracza %s na czas %i sekund.", pName(playerid), pName(targetid), time);
         AdminWarning(COLOR_RED, string, 1);
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ na slu¿bie administratora! (/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ na sluÂ¿bie administratora! (/duty)");
     return 1;
 }
  
 CMD:silentkill(playerid, params[]) {
     new string[128], targetid;
     if(IsPlayerScriptAdmin(playerid)) {
-        if(sscanf(params, "u", targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /silentkill [id/nick]");
-        if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "»  Nie ma takiego gracza!");
+        if(sscanf(params, "u", targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /silentkill [id/nick]");
+        if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â»  Nie ma takiego gracza!");
         SetPlayerHealth(targetid, 0.0);
-        format(string, sizeof(string), "» Zabi³eœ gracza %s!", pName(targetid));
+        format(string, sizeof(string), "Â» ZabiÂ³eÅ“ gracza %s!", pName(targetid));
         SendClientMessage(targetid, COLOR_LIGHTBLUE, string);
-        format(string, sizeof(string), "AdminWarning: Administrator %s u¿y³ /silentkill na graczu %s [ID:%d]!", pName(playerid), pName(targetid), targetid);
+        format(string, sizeof(string), "AdminWarning: Administrator %s uÂ¿yÂ³ /silentkill na graczu %s [ID:%d]!", pName(playerid), pName(targetid), targetid);
         printf(string);
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ administratorem!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ administratorem!");
     return 1;
 }
 CMD:spec(playerid, params[])
 {
    if(IsPlayerScriptAdmin(playerid)) {
         new string[64], targetid;
-        if(sscanf(params, "u", targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /spec [id/nick]");
-        if(targetid == playerid) return SendClientMessage(playerid, COLOR_LIGHTRED, "» Nie mo¿esz podgl¹daæ samego siebie!");
-        if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "»  Nie ma takiego gracza!");
+        if(sscanf(params, "u", targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /spec [id/nick]");
+        if(targetid == playerid) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» Nie moÂ¿esz podglÂ¹daÃ¦ samego siebie!");
+        if(!IsPlayerConnected(targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â»  Nie ma takiego gracza!");
         if(GetPVarInt(playerid, "Spectating") == 0) {
             SetPVarInt(playerid, "Spectating", 1);
             TogglePlayerSpectating(playerid, 1);
             PlayerSpectatePlayer(playerid, targetid);
-            format(string, sizeof(string), "» Podgl¹dasz gracza %s!");
+            format(string, sizeof(string), "Â» PodglÂ¹dasz gracza %s!");
             SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
             format(string, sizeof(string), "%s(ID: %d)", pName(targetid), targetid);
             GameTextForPlayer(playerid, string, 1000000, 4);
@@ -702,11 +702,11 @@ CMD:spec(playerid, params[])
         else {
             SetPVarInt(playerid, "Spectating", 0);
             TogglePlayerSpectating(playerid, 0);
-            SendClientMessage(playerid, COLOR_LIGHTBLUE, "» Ju¿ nikogo nie podgl¹dasz!");
+            SendClientMessage(playerid, COLOR_LIGHTBLUE, "Â» JuÂ¿ nikogo nie podglÂ¹dasz!");
             GameTextForPlayer(playerid, ".", 1, 4);  
         }
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ administratorem!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ administratorem!");
     return 1;
 }
 //----------SYSTEM KAR end-------
@@ -716,56 +716,56 @@ CMD:setskin(playerid, params[])
     new string[128], targetid, skinid;
     if (IsPlayerOnAdminDuty(playerid))
     {
-        if(sscanf(params, "ui", targetid, skinid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /setskin [id/nick] [id skin]");
+        if(sscanf(params, "ui", targetid, skinid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /setskin [id/nick] [id skin]");
         if(skinid <= 311 && skinid >= 0)
         {
             SetPlayerSkin(targetid, skinid);
             pInfo[playerid][Skin] = skinid;
-            format(string, sizeof(string), "» Administrator %s nada³ ci skin ID %i.", pName(playerid), skinid);
+            format(string, sizeof(string), "Â» Administrator %s nadaÂ³ ci skin ID %i.", pName(playerid), skinid);
             SendClientMessage(targetid, COLOR_LIGHTBLUE, string);
-            format(string, sizeof(string), "» Ustawi³eœ graczowi %s skin ID %i.", pName(targetid), skinid);
+            format(string, sizeof(string), "Â» UstawiÂ³eÅ“ graczowi %s skin ID %i.", pName(targetid), skinid);
             SendClientMessage(playerid, COLOR_LIGHTBLUE, string);
-            format(string, sizeof(string), "AdminWarning: Administrator %s ustawi³ graczowi %s skin ID %i.", pName(playerid), pName(targetid), skinid);
+            format(string, sizeof(string), "AdminWarning: Administrator %s ustawiÂ³ graczowi %s skin ID %i.", pName(playerid), pName(targetid), skinid);
             AdminWarning(COLOR_RED, string, 1);
         }
-        else SendClientMessage(playerid, COLOR_RED, "» ID musi byæ liczb¹ pomiêdzy 0 i 311!");
+        else SendClientMessage(playerid, COLOR_RED, "Â» ID musi byÃ¦ liczbÂ¹ pomiÃªdzy 0 i 311!");
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ na slu¿bie administratora! (/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ na sluÂ¿bie administratora! (/duty)");
     return 1;
 }
 CMD:giveweapon(playerid, params[])
 {
     new string[128], targetid, weaponid, ammoamount, slot;
     if (IsPlayerOnAdminDuty(playerid)) {
-        if(sscanf(params, "uiii", targetid, slot, weaponid, ammoamount)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /giveweapon [id/nick] [slot 1-3] [id broni] [ilosc amunicji]");
+        if(sscanf(params, "uiii", targetid, slot, weaponid, ammoamount)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /giveweapon [id/nick] [slot 1-3] [id broni] [ilosc amunicji]");
         if(weaponid <= 46 && weaponid >= 0) {
-            if(slot < 1 || slot > 3) return SendClientMessage(playerid, COLOR_LIGHTRED, "» Z³y slot!");
+            if(slot < 1 || slot > 3) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» ZÂ³y slot!");
             if(slot == 1) {
                 pInfo[targetid][Weapon1] = weaponid;
                 pInfo[targetid][Weapon1_ammo] = ammoamount;
-                printf("zapisano broñ o id %i z %i ammo pod slotem 1", weaponid, ammoamount);
+                printf("zapisano broÃ± o id %i z %i ammo pod slotem 1", weaponid, ammoamount);
             }
             else if(slot == 2) {
                 pInfo[targetid][Weapon2] = weaponid;
                 pInfo[targetid][Weapon2_ammo] = ammoamount;
-                printf("zapisano broñ o id %i z %i ammo pod slotem 2", weaponid, ammoamount);
+                printf("zapisano broÃ± o id %i z %i ammo pod slotem 2", weaponid, ammoamount);
             }
             else if(slot == 3) {
                 pInfo[targetid][Weapon3] = weaponid;
                 pInfo[targetid][Weapon3_ammo] = ammoamount;
-                printf("zapisano broñ o id %i z %i ammo pod slotem 3", weaponid, ammoamount);
+                printf("zapisano broÃ± o id %i z %i ammo pod slotem 3", weaponid, ammoamount);
             }
             GivePlayerWeapon(playerid, weaponid, ammoamount);
-            format(string, sizeof(string), "» Administrator %s nada³ ci broñ o ID %i.", pName(playerid), weaponid);
+            format(string, sizeof(string), "Â» Administrator %s nadaÂ³ ci broÃ± o ID %i.", pName(playerid), weaponid);
             SendClientMessage(targetid, COLOR_LIGHTBLUE, string);
-            format(string, sizeof(string), "» Da³eœ graczowi %s broñ o ID %i.", pName(targetid), weaponid);
+            format(string, sizeof(string), "Â» DaÂ³eÅ“ graczowi %s broÃ± o ID %i.", pName(targetid), weaponid);
             SendClientMessage(playerid, COLOR_LIGHTRED, string);
-            format(string, sizeof(string), "AdminWarning: Administrator %s da³ graczowi %s broñ o ID %i.", pName(playerid), pName(targetid), weaponid);
+            format(string, sizeof(string), "AdminWarning: Administrator %s daÂ³ graczowi %s broÃ± o ID %i.", pName(playerid), pName(targetid), weaponid);
             AdminWarning(COLOR_RED, string, 1);
         }
-        else SendClientMessage(playerid, COLOR_RED, "» ID broni musi byæ liczb¹ pomiêdzy 0 i 46! (wiki.sa-mp.com/wiki/Weapons)");
+        else SendClientMessage(playerid, COLOR_RED, "Â» ID broni musi byÃ¦ liczbÂ¹ pomiÃªdzy 0 i 46! (wiki.sa-mp.com/wiki/Weapons)");
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ na slu¿bie administratora! (/duty)");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ na sluÂ¿bie administratora! (/duty)");
     return 1;
 }
  
@@ -778,7 +778,7 @@ CMD:a(playerid, params[])
 {
     new text[128], string[128];
     if (IsPlayerScriptAdmin(playerid)) {
-        if(sscanf(params, "s[128]", text)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /a(dminchat) [wiadomoœæ]");
+        if(sscanf(params, "s[128]", text)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /a(dminchat) [wiadomoÅ“Ã¦]");
         for(new i = 0; i < MAX_PLAYERS; i++)
         {
             if(IsPlayerConnected(i))
@@ -792,7 +792,7 @@ CMD:a(playerid, params[])
         }
        
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ administratorem!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ administratorem!");
     return 1;
 }
 
@@ -800,7 +800,7 @@ CMD:m(playerid, params[])
 {
     new text[128], string[128];
     if (IsPlayerModerator(playerid) || IsPlayerScriptAdmin(playerid)) {
-        if(sscanf(params, "s[128]", text)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /m(od) [wiadomoœæ]");
+        if(sscanf(params, "s[128]", text)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /m(od) [wiadomoÅ“Ã¦]");
         for(new i = 0; i < MAX_PLAYERS; i++)
         {
             if(IsPlayerConnected(i))
@@ -819,7 +819,7 @@ CMD:m(playerid, params[])
         }
        
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ moderatorem!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ moderatorem!");
     return 1;
 }
  
@@ -827,26 +827,26 @@ CMD:setvip(playerid, params[])
 {
     new string[128], targetid;
     if(IsPlayerScriptAdmin(playerid)) {
-        if(sscanf(params, "u", targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /setvip [id/nick]");
+        if(sscanf(params, "u", targetid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /setvip [id/nick]");
         pInfo[targetid][Vip] = 1;
-        format(string, sizeof(string), "» Administrator %s nada³ Ci konto VIP.", pName(playerid));
+        format(string, sizeof(string), "Â» Administrator %s nadaÂ³ Ci konto VIP.", pName(playerid));
         SendClientMessage(targetid, COLOR_LIGHTRED, string);
-        format(string, sizeof(string), "» Nada³eœ graczowi %s konto VIP.", pName(targetid));
+        format(string, sizeof(string), "Â» NadaÂ³eÅ“ graczowi %s konto VIP.", pName(targetid));
         SendClientMessage(playerid, COLOR_LIGHTRED, string);
-        format(string, sizeof(string), "AdminWarning: Administrator %s nada³ graczowi %s konto VIP", pName(playerid), pName(targetid));
+        format(string, sizeof(string), "AdminWarning: Administrator %s nadaÂ³ graczowi %s konto VIP", pName(playerid), pName(targetid));
         AdminWarning(COLOR_RED, string, 1);
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ administratorem!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ administratorem!");
     return 1;
 }
  
 CMD:ulecz(playerid, temps[])
 {
     if(IsPlayerVip(playerid)) {
-        SendClientMessage(playerid, COLOR_LIGHTRED, "» Zostaniesz uleczony za 3 sekundy!");
+        SendClientMessage(playerid, COLOR_LIGHTRED, "Â» Zostaniesz uleczony za 3 sekundy!");
         SetTimerEx("Heal", 3000, false, "i", playerid);
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ mieæ konto VIP!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ mieÃ¦ konto VIP!");
     return 1;
 }
  
@@ -862,14 +862,14 @@ CMD:togglewarning(playerid, temps[])
     if(IsPlayerScriptAdmin(playerid)) {
         if(SetPVarInt(playerid, "DisplayWarnings", 1)) {
             SetPVarInt(playerid, "DisplayWarnings", 0);
-            SendClientMessage(playerid, COLOR_ORANGE, "» Wy³¹czy³eœ warningi administratorskie!");
+            SendClientMessage(playerid, COLOR_ORANGE, "Â» WyÂ³Â¹czyÂ³eÅ“ warningi administratorskie!");
         }
         else {
             SetPVarInt(playerid, "DisplayWarnings", 1);
-            SendClientMessage(playerid, COLOR_GREEN, "» W³¹czy³eœ warningi administratorskie!");
+            SendClientMessage(playerid, COLOR_GREEN, "Â» WÂ³Â¹czyÂ³eÅ“ warningi administratorskie!");
         }
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ administratorem!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ administratorem!");
     return 1;
 }
  
@@ -877,7 +877,7 @@ CMD:ann(playerid, params[])
 {
    if(IsPlayerScriptAdmin(playerid)) {
         new string[64], input[64];
-        if(sscanf(params, "s[64]", input)) return SendClientMessage(playerid, COLOR_LIGHTRED, "» U¯YCIE: /ann [wiadomoœæ]");
+        if(sscanf(params, "s[64]", input)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Â» UÂ¯YCIE: /ann [wiadomoÅ“Ã¦]");
         for(new i = 0; i < MAX_PLAYERS; i++)
         {
             if(IsPlayerConnected(i))
@@ -887,14 +887,14 @@ CMD:ann(playerid, params[])
             }
         }
     }
-    else SendClientMessage(playerid, COLOR_RED, "» Aby u¿yæ tej komendy musisz byæ administratorem!");
+    else SendClientMessage(playerid, COLOR_RED, "Â» Aby uÂ¿yÃ¦ tej komendy musisz byÃ¦ administratorem!");
     return 1;
 }
 
 CMD:kasa(playerid, params[])
 {
     GivePlayerMoney(playerid, 50000);
-    SendClientMessage(playerid, COLOR_RED, "» Otrzymujesz $50000 od " SYSTEM );
+    SendClientMessage(playerid, COLOR_RED, "Â» Otrzymujesz $50000 od " SYSTEM );
     return 1;
 }
  
@@ -967,7 +967,7 @@ public ClearLastUserData(playerid) {
 forward Heal(playerid);
 public Heal(playerid) {
     SetPlayerHealth(playerid, 100.0);
-    SendClientMessage(playerid, COLOR_LIGHTBLUE, "» Uleczy³eœ siê!");
+    SendClientMessage(playerid, COLOR_LIGHTBLUE, "Â» UleczyÂ³eÅ“ siÃª!");
     return 1;
 }
  
@@ -989,7 +989,7 @@ public SetPlayerSavedWeapon(playerid, weaponslot, weaponid, ammo)
 }*/
 forward ShowAdminLoginDialog(playerid);
 public ShowAdminLoginDialog(playerid) {
-    if(IsPlayerScriptAdmin(playerid)) ShowPlayerDialog(playerid, DIALOG_ADMINLOGIN, DIALOG_STYLE_PASSWORD, DNAZWA DWERSJA " | Administrator", "Wpisz has³o administratora aby kontynuowaæ:", "Login", "Anuluj");
+    if(IsPlayerScriptAdmin(playerid)) ShowPlayerDialog(playerid, DIALOG_ADMINLOGIN, DIALOG_STYLE_PASSWORD, DNAZWA DWERSJA " | Administrator", "Wpisz hasÂ³o administratora aby kontynuowaÃ¦:", "Login", "Anuluj");
     return 1;
 }
 
@@ -1114,30 +1114,8 @@ PlayerArmor(playerid)
     GetPlayerArmour(playerid, Float:val);
     return Float:val;
 }
- 
-CreateActorWithAnimation(ActorID, ModelID, Float:X, Float:Y, Float:Z, Float:Rotation, animlib[], animname[], loop, freeze, name[], Float:drawdistance, vw, Text3D:textname) {
-    ActorID = CreateActor(ModelID, Float:X, Float:Y, Float:Z, Float:Rotation);
-    ApplyActorAnimation(ActorID, animlib, animname, 4.1, loop, 1, 1, freeze, 0);
-    textname = Create3DTextLabel(name, -1, Float:X, Float:Y, Float:Z + 1.1, Float:drawdistance, vw, 0);
-    return 1;
-}
 
-
-CMD:saveactorpos(playerid, params[]) {
-    new float:x, float:y, float:z, float:rot, skin, str[128], input[32];
-    if(sscanf(params,"s[32]", input)) return SendClientMessage(playerid, COLOR_RED, "USAGE: /saveactorpos [actor name]");
-    GetPlayerPos(playerid, Float:x, Float:y, Float:z);
-    GetPlayerFacingAngle(playerid, Float:rot);
-    skin = GetPlayerSkin(playerid);
-    format(str, sizeof(str), "%s, %i, %f, %f, %f, %f", input, skin, float:x, float:y, float:z, float:rot);
-    new INI:File = INI_Open("actor_log.ini");
-    INI_SetTag(File,"data");
-    INI_WriteString(File, "LOG", str);
-    INI_Close(File);
-    return 1;
-}
-
-//ANTI DEAMX - nie w³¹czaæ poki co
+//ANTI DEAMX - nie wÂ³Â¹czaÃ¦ poki co
 
 WasteDeAMXersTime()
 {
